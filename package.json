@@ -1,0 +1,19 @@
+{
+  "name": "contact-sender",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:leotubarao/contact-sender.git",
+  "author": "Leônidas Santos <oi@ltco.com.br>",
+  "license": "MIT",
+  "scripts": {
+    "watch": "babel --watch src --out-dir public -s inline --copy-files",
+    "build": "babel src --out-dir public -s inline --copy-files"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-preset-minify": "^0.5.1",
+    "dotenv": "^8.2.0"
+  }
+}
