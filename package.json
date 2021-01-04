@@ -6,8 +6,8 @@
   "author": "Leônidas Santos <oi@ltco.com.br>",
   "license": "MIT",
   "scripts": {
-    "watch": "babel --watch src --out-dir public -s inline --copy-files",
-    "build": "babel src --out-dir public -s inline --copy-files"
+    "watch": "babel --watch src --out-dir dist -s inline --copy-files",
+    "build": "babel src --out-dir dist -s inline --copy-files"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
