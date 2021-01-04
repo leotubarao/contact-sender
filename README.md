@@ -15,7 +15,7 @@ git clone https://github.com/leotubarao/contact-sender/
 Insira o script no final da tag `body`.
 
 ```html
-<script src="./contact-sender/dist/ltco-contact-sender.js"></script>
+<script src="./contact-sender/dist/ltco-contact-sender.min.js"></script>
 ```
 
 É necessário que você também insira o **Axios**. Usamos ele para enviar os dados do formulário, para o arquivo de configuração/envio do PHPMailer (`sender.php`).
@@ -68,7 +68,8 @@ contact-sender/
 │   ├── includes/
 │   │   ├── PHPMailer/
 │   │   └── sender.php
-│   └── ltco-contact-sender.js
+│   ├── ltco-contact-sender.js
+│   └── ltco-contact-sender.min.js
 └── example/
     └── index.html
 ```
