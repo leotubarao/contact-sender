@@ -16,32 +16,32 @@
     </div>
   </div>
   <div class="container pb-4">
-    <form data-form-type="ltco_form" novalidate>
-      <input type="hidden" name="urlSender" data-form-sender value="../src/includes/send.php">
-
+    <form data-form-type="ltco_form" data-form-sender="cs" novalidate>
       <div class="alert" hidden data-form-alert></div>
 
       <div class="form-group">
-        <input type="text" class="form-control" data-form-field="Nome" placeholder="Nome*" required aria-required="true">
+        <input type="text" class="form-control" data-form-field="Nome" placeholder="Nome*" required>
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" data-form-field="Email" placeholder="E-mail*" required aria-required="true">
+        <input type="email" class="form-control" data-form-field="Email" placeholder="E-mail*" required>
       </div>
       <div class="form-group">
-        <input type="tel" class="form-control" data-form-field="Telefone" placeholder="Telefone*" required aria-required="true">
+        <input type="tel" class="form-control" data-form-field="Telefone" placeholder="Telefone*" required>
       </div>
       <div class="form-group">
-        <textarea class="form-control" data-form-field="Mensagem" placeholder="Mensagem*" required aria-required="true"></textarea>
+        <textarea class="form-control" data-form-field="Mensagem" placeholder="Mensagem*" required></textarea>
       </div>
 
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
   </div>
 
-  <script src="../src/ltco-contact-sender.js"></script>
+  <script src="../dist/ltco-contact-sender.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js?ver=1.14.16"></script>
+
+  <script>var SPMaskBehavior=function(a){return 11===a.replace(/\D/g,'').length?'(00) 00000-0000':'(00) 0000-00009'},spOptions={onKeyPress:function e(a,b,c,d){c.mask(SPMaskBehavior.apply({},arguments),d)}};$('input[name="telefone"], input[name="celular"], input[type="tel"]').mask(SPMaskBehavior,spOptions);</script>
 </body>
 </html>
