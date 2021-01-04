@@ -1,3 +1,16 @@
+const getUrlSender = form => {
+  let senderPath = '/contact-sender/dist/includes/sender.php';
+
+  let senderAttr = form.getAttribute('data-form-sender') || './';
+
+  if (senderAttr.slice(-1) === '/') senderAttr = senderAttr.slice(0, -1);
+  if (senderAttr.slice(-2) === 'cs') senderPath = senderPath.slice(15);
+  if (senderAttr.slice(-2) === 'cs') senderAttr = senderAttr.slice(0, -2);
+  if (senderPath.slice(15) !== '/contact-sender') senderPath = '..' + senderPath;
+
+  return senderAttr + senderPath;
+};
+
 const isValid = field => {
   if (field.checkValidity) return field.checkValidity();
 
@@ -37,8 +50,9 @@ const getFieldsData = fields => {
 const handleSubmit = async (event, form) => {
   event.preventDefault();
 
+  const senderUrl = getUrlSender(form);
+
   const fields = form.querySelectorAll('[data-form-field]:not([type="hidden"])');
-  const actionPost = form.querySelector('[data-form-sender]').value;
   const alert = form.querySelector('[data-form-alert]');
   const submit = form.querySelector('[type="submit"]');
   const submitText = submit.innerText;
@@ -58,7 +72,7 @@ const handleSubmit = async (event, form) => {
 
   try {
     await axios
-    .post(actionPost, data)
+    .post(senderUrl, data)
     .then(({ data: response }) => {
       alert.innerText = response.message;
       alert.classList.add(`alert-${response.class}`);
